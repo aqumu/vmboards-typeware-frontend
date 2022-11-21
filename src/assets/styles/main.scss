@@ -1,0 +1,28 @@
+@import 'bootstrap-custom/bootstrap-custom.scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;1,200;1,300;1,400&display=swap');
+
+$css-bg-light: #FFFFFF;
+$css-bg-dark: #eeeeee;
+$selection-color: #B4D5FF;
+
+.dark {
+  background-color: $css-bg-dark;
+}
+.light {
+  background-color: $css-bg-light;
+}
+.row-container {
+   background-color: white;
+   border-radius: 0 0 5px 5px;
+ }
+::selection {
+  color: white;
+  background: $selection-color;
+}
+ul {
+  list-style-type: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}

@@ -1,2 +1,13 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+    import Waves from '../lib/Waves.svelte';
+    import VM35 from '../lib/VM35demo.svelte';
+    import VMK from '../lib/VMKdemo.svelte';
+    import GBs from '../lib/GBsdemo.svelte';
+</script>
+
+<main>
+    <Waves />
+    <VM35 />
+    <VMK />
+    <GBs />
+</main>
