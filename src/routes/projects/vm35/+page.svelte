@@ -102,7 +102,7 @@
 <main>
 	<div class="subheader">
 		<div class="targetbox">
-			<div class="targetwrap" on:click={() => window.scrollTo(0, 0)}>
+			<div class="targetwrap" on:click={() => window.scrollTo(0, 0)} on:keypress={() => window.scrollTo(0, 0)}>
 				<img
 					alt=""
 					bind:this={target1}
@@ -112,7 +112,7 @@
 				<div>overview</div>
 			</div>
 
-			<div class="targetwrap" on:click={() => window.scrollTo(0, details)}>
+			<div class="targetwrap" on:click={() => window.scrollTo(0, details)} on:keypress={() => window.scrollTo(0, details)}>
 				<img
 					alt=""
 					bind:this={target2}
@@ -122,7 +122,7 @@
 				<div>details</div>
 			</div>
 
-			<div class="targetwrap" on:click={() => window.scrollTo(0, groupbuy)}>
+			<div class="targetwrap" on:click={() => window.scrollTo(0, groupbuy)} on:keypress={() => window.scrollTo(0, groupbuy)}>
 				<img
 					alt=""
 					bind:this={target3}
@@ -140,9 +140,9 @@
 				style="height: calc(100vh - 56px) !important; margin: 0;"
 			>
 				<div class="col-6 firstcol">
-					<div class="video-wrapper" on:click={togglevid}>
-						<video id="videoelement1" src="/assembly.webm" style="z-index: 1" bind:this={video2}></video>
-						<video id="videoelement2" src="/explosion.webm" style="z-index: 0" bind:this={video1}></video>
+					<div class="video-wrapper" on:click={togglevid} on:keypress={ togglevid }>
+						<video id="videoelement1" src="/assembly.webm" style="z-index: 1" bind:this={ video2 }></video>
+						<video id="videoelement2" src="/explosion.webm" style="z-index: 0" bind:this={ video1 }></video>
 						<img
 							bind:this={img1}
 							style="bind:opacity={opacity1}"

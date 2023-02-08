@@ -5,6 +5,7 @@
 		menu.style.opacity = '1';
 		menu.style.clipPath = 'circle(400%)';
 	}
+
 	function hidemenu() {
 		menu.style.opacity = '0';
 		menu.style.clipPath = 'circle(0%)';
@@ -42,7 +43,7 @@
 					height="20px"
 					src="/brand-logo.png"
 					alt="logo"
-					on:mouseover={hidemenu}
+					on:mouseover={ hidemenu }
 				/></a
 			>
 			<button
@@ -59,12 +60,10 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-sm-0">
 					<li class="nav-item">
-						<a class="nav-link underline" id="projects" href="/projects" on:mouseover={showmenu}
-							>Projects</a
-						>
+						<a class="nav-link underline" id="projects" href="/projects" on:mouseover={ showmenu } on:click={ hidemenu }>Projects</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link underline" href="/updates" on:mouseover={hidemenu}>Updates</a>
+						<a class="nav-link underline" href="/updates" on:mouseover={ hidemenu }>Updates</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link underline" href="/contact-us">Contact Us</a>
@@ -73,17 +72,12 @@
 						<a class="nav-link underline" href="/info">Info</a>
 					</li>
 				</ul>
-				<ul id="menu" bind:this={menu} on:mouseleave={hidemenu}>
-					<li style="margin-top: 8px;"><a class="dropdown-item" href="/projects/vm35">VM35</a></li>
-					<li><a href="#" class="dropdown-item disabled">VM70/2 (Soon)</a></li>
-					<li>
-						<a href="#" class="dropdown-item disabled" style="margin-bottom: 4px;">VM67 (Soon)</a>
-					</li>
-					<li><hr class="dropdown-divider" /></li>
-					<li>
-						<a class="dropdown-item" style="margin-top: 4px;" href="/projects/vmk">VMK Firmware</a>
-					</li>
-					<li><a class="dropdown-item" href="/group-buys">Group Buys</a></li>
+				<ul id="menu" bind:this={ menu } on:mouseleave={ hidemenu } on:click={ hidemenu }>
+					<li style="margin-top: 8px"><a class="dropdown-item" href="/projects/vm35">VM35</a></li>
+					<li><a href="" class="dropdown-item disabled">VM70/2 (Soon)</a></li>
+					<li><a href="" class="dropdown-item disabled">VM67 (Soon)</a></li>
+					<li><hr class="dropdown-divider" style="margin: 4px 0" /></li>
+					<li><a class="dropdown-item" style="margin-bottom: 8px" href="/projects/vmk">VMK Firmware</a></li>
 				</ul>
 			</div>
 		</div>
@@ -146,7 +140,7 @@
 		top: 51px;
 		right: 188px;
 		width: 160px;
-		height: 206px;
+		height: 170px;
 		background-color: white;
 		padding: 0;
 		opacity: 0;

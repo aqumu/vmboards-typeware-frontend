@@ -56,7 +56,7 @@
 		<div class="col-6 text-center" style="margin-top: auto; margin-bottom: auto">
 			<h1>FR4 Keyboard plates and PCB's</h1>
 			<div style="padding-top: 10%;">
-				<a href="/group-buys" class="btn btn_light btn-primary">Shop Now</a>
+				<a href="/projects" class="btn btn_light btn-primary">Shop Now</a>
 			</div>
 		</div>
 	</div>

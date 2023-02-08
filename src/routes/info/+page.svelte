@@ -40,10 +40,10 @@
 		width: 60%;
 	}
 	.question {
-		font-size: calc(1rem + 0.85vw);
+		font-size: calc(1rem + 0.65vw);
 	}
 	.answer {
-		font-size: calc(0.6rem + 0.95vw);
+		font-size: calc(0.6rem + 0.75vw);
 		margin-bottom: 1.4rem;
 	}
 	main {
