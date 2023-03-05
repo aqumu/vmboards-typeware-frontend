@@ -60,9 +60,6 @@
 		}
 	}
 
-	// window.onscroll = checkpos;
-	// window.onresize = setpos;
-
 	onMount(() => {
 		const target1 = document.getElementById('target1'),
 					target2 = document.getElementById('target2'),
@@ -107,8 +104,6 @@
 		setTimeout(checkpos, 500);
 	});
 </script>
-
-<!--<svelte:window bind:scrollY={y}/>-->
 
 <main id="main">
 	<div class="subheader">
