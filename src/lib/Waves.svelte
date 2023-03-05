@@ -21,7 +21,7 @@
 		text-align: center;
 		width: 100%;
 		top: 50%;
-		color: #f5f5f5;
+		color: #FFFFFF;
 		font-family: 'Raleway', sans-serif;
 		font-weight: 300;
 		font-size: 10vw;

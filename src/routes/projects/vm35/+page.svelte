@@ -9,20 +9,8 @@
 		opacity2,
 		exploded = false,
 		cantoggle = true,
-		target1,
-		target2,
-		target3,
-		y,
 		details,
 		groupbuy;
-
-	onMount(() => {
-		video2.currentTime = '1'; //this is to make page loading more seamless
-		img1.style.opacity = '1';
-		img2.style.opacity = '0';
-		setTimeout(setpos, 500);
-		setTimeout(checkpos, 500);
-	});
 
 	function togglecantoggle() {
 		cantoggle = !cantoggle;
@@ -72,40 +60,63 @@
 		}
 	}
 
-	function checkpos() {
-		if (y <= details - 4) {
-			target1.style.opacity = '1';
-			target2.style.opacity = '0';
-			target3.style.opacity = '0';
-		} else if (y <= groupbuy - 4) {
-			target1.style.opacity = '0';
-			target2.style.opacity = '1';
-			target3.style.opacity = '0';
-		} else {
-			target1.style.opacity = '0';
-			target2.style.opacity = '0';
-			target3.style.opacity = '1';
+	// window.onscroll = checkpos;
+	// window.onresize = setpos;
+
+	onMount(() => {
+		const target1 = document.getElementById('target1'),
+					target2 = document.getElementById('target2'),
+					target3 = document.getElementById('target3');
+		let y = window.scrollY;
+
+		function checkpos() {
+			if (y <= details - 4) {
+				target1.style.opacity = '1';
+				target2.style.opacity = '0';
+				target3.style.opacity = '0';
+			} else if (y <= groupbuy - 4) {
+				target1.style.opacity = '0';
+				target2.style.opacity = '1';
+				target3.style.opacity = '0';
+			} else {
+				target1.style.opacity = '0';
+				target2.style.opacity = '0';
+				target3.style.opacity = '1';
+			}
 		}
-	}
 
-	function setpos() {
-		details = document.getElementById('details').offsetTop;
-		groupbuy = document.getElementById('group-buy').offsetTop;
-	}
+		function setpos() {
+			details = document.getElementById('details').offsetTop;
+			groupbuy = document.getElementById('group-buy').offsetTop;
+		}
 
-	window.onscroll = checkpos;
-	window.onresize = setpos;
+		document.addEventListener("scroll", () => {
+			y = window.scrollY;
+			checkpos();
+		});
+
+		document.addEventListener("resize", () => {
+			setpos();
+		}, { passive: true });
+
+		setpos();
+		video2.currentTime = '1'; //this is to make page loading more seamless
+		img1.style.opacity = '1';
+		img2.style.opacity = '0';
+		setTimeout(setpos, 500);
+		setTimeout(checkpos, 500);
+	});
 </script>
 
-<svelte:window bind:scrollY={y} />
+<!--<svelte:window bind:scrollY={y}/>-->
 
-<main>
+<main id="main">
 	<div class="subheader">
 		<div class="targetbox">
 			<div class="targetwrap" on:click={() => window.scrollTo(0, 0)} on:keypress={() => window.scrollTo(0, 0)}>
 				<img
 					alt=""
-					bind:this={target1}
+					id="target1"
 					class="target-bg"
 					src="data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='7' ry='7' stroke='%23333' stroke-width='2' stroke-dasharray='4%2c6' stroke-dashoffset='30' stroke-linecap='round'/%3e%3c/svg%3e"
 				/>
@@ -115,7 +126,7 @@
 			<div class="targetwrap" on:click={() => window.scrollTo(0, details)} on:keypress={() => window.scrollTo(0, details)}>
 				<img
 					alt=""
-					bind:this={target2}
+					id="target2"
 					class="target-bg"
 					src="data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='7' ry='7' stroke='%23333' stroke-width='2' stroke-dasharray='4%2c6' stroke-dashoffset='30' stroke-linecap='round'/%3e%3c/svg%3e"
 				/>
@@ -125,7 +136,7 @@
 			<div class="targetwrap" on:click={() => window.scrollTo(0, groupbuy)} on:keypress={() => window.scrollTo(0, groupbuy)}>
 				<img
 					alt=""
-					bind:this={target3}
+					id="target3"
 					class="target-bg"
 					src="data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='7' ry='7' stroke='%23333' stroke-width='2' stroke-dasharray='4%2c6' stroke-dashoffset='30' stroke-linecap='round'/%3e%3c/svg%3e"
 				/>
@@ -535,8 +546,8 @@
 		display: flex;
 		z-index: 500;
 		background: rgba(255, 255, 255, 0.3);
-		backdrop-filter: blur(5px);
-		-webkit-backdrop-filter: blur(5px);
+		backdrop-filter: saturate(180%) blur(20px);
+		-webkit-backdrop-filter: saturate(180%) blur(20px);
 		border: 1px solid rgba(255, 255, 255, 0.3);
 		border-top: 0;
 	}
