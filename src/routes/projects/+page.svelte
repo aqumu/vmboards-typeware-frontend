@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	let first, second, third, text1, text2, text3, wrapper1, wrapper2, wrapper3;
+	let first, second, third, text1, text2, text3, wrapper1, wrapper2, wrapper3, activeSwitch;
 
 	function widen1() {
 		first.style.width = "80vw"
@@ -70,47 +70,47 @@
 			<h1 class="header" bind:this={ text1 }>Parts</h1>
 			<div class="productWrapper" bind:this={ wrapper1 }>
 				<div class="grid-container">
-					<div class="grid-item" style="background-image: url('/60_pcb.jpg');">
-						<a href="">
-							<div class="shadow">
+					<div class="grid-item" style="background-image: url('/60_pcb.png');">
+						<div class="blur-overlay full-size" on:mouseover={() => activeSwitch = 1} on:mouseleave={() => activeSwitch = 0}>
+							<a class="full-size" class:unblurred={activeSwitch === 1} style="transition: opacity 300ms;" href="/projects/vmk">
 								<h2 class="name unselectable">60% PCB</h2>
-							</div>
-						</a>
+							</a>
+						</div>
 					</div>
-					<div class="grid-item" style="background-image: url('/65_pcb.jpg');">
-						<a href="">
-							<div class="shadow">
+					<div class="grid-item" style="background-image: url('/65_pcb.png');">
+						<div class="blur-overlay full-size" on:mouseover={() => activeSwitch = 2} on:mouseleave={() => activeSwitch = 0}>
+							<a class="full-size" class:unblurred={activeSwitch === 2} style="transition: opacity 300ms;" href="/projects/vmk">
 								<h2 class="name unselectable">65% PCB</h2>
-							</div>
-						</a>
+							</a>
+						</div>
 					</div>
-					<div class="grid-item" style="background-image: url('/67_pcb.jpg');">
-						<a href="">
-							<div class="shadow">
+					<div class="grid-item" style="background-image: url('/67_pcb.png');">
+						<div class="blur-overlay full-size" on:mouseover={() => activeSwitch = 3} on:mouseleave={() => activeSwitch = 0}>
+							<a class="full-size" class:unblurred={activeSwitch === 3} style="transition: opacity 300ms;" href="/projects/vmk">
 								<h2 class="name unselectable">67% PCB</h2>
-							</div>
-						</a>
+							</a>
+						</div>
 					</div>
-					<div class="grid-item" style="background-image: url('/60_pcb.jpg');">
-						<a href="">
-							<div class="shadow">
+					<div class="grid-item" style="background-image: url('/60_pcb.png');">
+						<div class="blur-overlay full-size" on:mouseover={() => activeSwitch = 4} on:mouseleave={() => activeSwitch = 0}>
+							<a class="full-size" class:unblurred={activeSwitch === 4} style="transition: opacity 300ms;" href="/projects/vmk">
 								<h2 class="name unselectable">60% <wbr />FR4 Plate</h2>
-							</div>
-						</a>
+							</a>
+						</div>
 					</div>
-					<div class="grid-item" style="background-image: url('/65_pcb.jpg');">
-						<a href="">
-							<div class="shadow">
+					<div class="grid-item" style="background-image: url('/65_pcb.png');">
+						<div class="blur-overlay full-size" on:mouseover={() => activeSwitch = 5} on:mouseleave={() => activeSwitch = 0}>
+							<a class="full-size" class:unblurred={activeSwitch === 5} style="transition: opacity 300ms;" href="/projects/vmk">
 								<h2 class="name unselectable">65% <wbr />FR4 Plate</h2>
-							</div>
-						</a>
+							</a>
+						</div>
 					</div>
-					<div class="grid-item" style="background-image: url('/67_pcb.jpg');">
-						<a href="">
-							<div class="shadow">
+					<div class="grid-item" style="background-image: url('/67_pcb.png');">
+						<div class="blur-overlay full-size" on:mouseover={() => activeSwitch = 6} on:mouseleave={() => activeSwitch = 0}>
+							<a class="full-size" class:unblurred={activeSwitch === 6} style="transition: opacity 300ms;" href="/projects/vmk">
 								<h2 class="name unselectable">67% <wbr />FR4 Plate</h2>
-							</div>
-						</a>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -121,25 +121,25 @@
 			<h1 class="header" bind:this={ text2 }>Keyboards</h1>
 			<div class="productWrapper" bind:this={ wrapper2 }>
 				<div class="product" style="width: calc(33.333% - 10px); background-image: url('/poster.png');">
-					<a href="/projects/vm35">
-						<div class="shadow">
-							<h2 class="name unselectable">VM35</h2>
-						</div>
-					</a>
+					<div class="blur-overlay" on:mouseover={() => activeSwitch = 7} on:mouseleave={() => activeSwitch = 0} style="width: 100%; height: 100%;">
+						<a class="full-size" class:unblurred={activeSwitch === 7} style="transition: opacity 300ms;" href="/projects/vm35">
+								<h2 class="name unselectable">VM35</h2>
+						</a>
+					</div>
 				</div>
 				<div class="product" style="width: calc(33.333% - 10px); background-image: url('/vm67.png');">
-					<a href="">
-						<div class="shadow">
-							<h2 class="name unselectable">VM67</h2>
-						</div>
-					</a>
+					<div class="blur-overlay" on:mouseover={() => activeSwitch = 8} on:mouseleave={() => activeSwitch = 0} style="width: 100%; height: 100%;">
+						<a class="full-size" class:unblurred={activeSwitch === 8} style="transition: opacity 300ms;" href="">
+								<h2 class="name unselectable">VM67</h2>
+						</a>
+					</div>
 				</div>
 				<div class="product" style="width: calc(33.333% - 20px); margin-right: 10px; background-image: url('/vm_70_2.jpg');">
-					<a href="">
-						<div class="shadow">
-							<h2 class="name unselectable">VM70/2</h2>
-						</div>
-					</a>
+					<div class="blur-overlay" on:mouseover={() => activeSwitch = 9} on:mouseleave={() => activeSwitch = 0} style="width: 100%; height: 100%;">
+						<a class="full-size" class:unblurred={activeSwitch === 9} style="transition: opacity 300ms;" href="">
+								<h2 class="name unselectable">VM70/2</h2>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -148,12 +148,12 @@
 		<div class="book lighter" style="box-shadow: -10px 0 7px -7px hsl(0, 0%, 70%);">
 			<h1 class="header" bind:this={ text3 }>Software</h1>
 			<div class="productWrapper" bind:this={ wrapper3 }>
-				<div class="product" style="width: calc(100% - 20px); margin-right: 10px; background-image: url('/VIA.jpg');">
-					<a href="/projects/vmk">
-						<div class="shadow">
+				<div class="product" style="width: calc(100% - 20px); margin-right: 10px; background-image: url('/vmk_proto.png');">
+					<div class="blur-overlay" on:mouseover={() => activeSwitch = 10} on:mouseleave={() => activeSwitch = 0} style="width: 100%; height: 100%;">
+						<a class="full-size" class:unblurred={activeSwitch === 10} style="transition: opacity 300ms;" href="/projects/vmk">
 							<h2 class="name unselectable">VMK</h2>
-						</div>
-					</a>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -161,6 +161,42 @@
 </div>
 
 <style lang="scss">
+	.blur-overlay {
+		backdrop-filter: saturate(160%) blur(8px) brightness(90%);
+		-webkit-backdrop-filter: saturate(160%) blur(8px) brightness(90%);
+		transition: all 175ms linear;
+		border-radius: inherit;
+	}
+
+	.blur-overlay:hover {
+		backdrop-filter: none;
+		-webkit-backdrop-filter: none;
+	}
+
+	.unblurred {
+		opacity: 0;
+	}
+
+	@keyframes onHover {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+		}
+	}
+
+	.product {
+		height: calc(100% - 80px);
+		margin: 70px 0 10px 10px;
+		border-radius: calc(1.3rem - 10px);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+		overflow: hidden;
+	}
+
 	.shelf {
 		display: flex;
 		width: 100vw;
@@ -207,43 +243,9 @@
 		border-radius: calc(1.3rem - 10px);
 		background-position: center;
 		background-repeat: no-repeat;
-		background-size: 100% auto;
-		transition: 250ms;
+		background-size: cover;
 		position: relative;
 		overflow: hidden;
-	}
-
-	.grid-item:hover {
-		background-size: 105% auto;
-	}
-
-	.product {
-		height: calc(100% - 80px);
-		margin: 70px 0 10px 10px;
-		border-radius: calc(1.3rem - 10px);
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: auto 100%;
-		transition: 250ms;
-		position: relative;
-		overflow: hidden;
-	}
-
-	.product:hover {
-		background-size: auto 105%;
-	}
-
-	.shadow {
-		height: 100%;
-		width: 100%;
-		background-color: black;
-		border-radius: inherit;
-		opacity: 0.3;
-		transition: 350ms;
-	}
-
-	.shadow:hover {
-		opacity: 0.7;
 	}
 
 	.name {
@@ -300,6 +302,13 @@
 	a {
 		text-decoration: none;
 		color: white;
+		border-radius: inherit;
+	}
+
+	.full-size {
+		display: block;
+		height: 100%;
+		width: 100%;
 		border-radius: inherit;
 	}
 </style>

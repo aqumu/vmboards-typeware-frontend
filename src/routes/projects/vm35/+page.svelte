@@ -1,64 +1,65 @@
 <script>
 	import { onMount } from 'svelte';
+	import Explosion from '../../../lib/Explosion.svelte';
 
-	let video1,
-		video2,
+	 let //video1,
+		//video2,
 		img1,
 		img2,
-		opacity1,
-		opacity2,
-		exploded = false,
-		cantoggle = true,
+		// opacity1,
+		// opacity2,
+		// exploded = false,
+		// cantoggle = true,
 		details,
 		groupbuy;
 
-	function togglecantoggle() {
-		cantoggle = !cantoggle;
-	}
+	// function togglecantoggle() {
+	// 	cantoggle = !cantoggle;
+	// }
+	//
+	// function toggleimg1() {
+	// 	if (img1.style.opacity === '0') {
+	// 		img1.style.opacity = '1';
+	// 	} else {
+	// 		img1.style.opacity = '0';
+	// 	}
+	// }
 
-	function toggleimg1() {
-		if (img1.style.opacity === '0') {
-			img1.style.opacity = '1';
-		} else {
-			img1.style.opacity = '0';
-		}
-	}
+	// function toggleimg2() {
+	// 	if (img2.style.opacity === '0') {
+	// 		img2.style.opacity = '1';
+	// 	} else {
+	// 		img2.style.opacity = '0';
+	// 	}
+	// }
 
-	function toggleimg2() {
-		if (img2.style.opacity === '0') {
-			img2.style.opacity = '1';
-		} else {
-			img2.style.opacity = '0';
-		}
-	}
-
-	function togglevid() {
-		if (cantoggle === true) {
-			if (exploded === false) {
-				togglecantoggle();
-				setTimeout(togglecantoggle, 1050);
-				video1.currentTime = '1' - video2.currentTime;
-				setTimeout(toggleimg2, 1000);
-				toggleimg1();
-				video1.style.opacity = '1';
-				video2.style.opacity = '0';
-				video1.play();
-				video2.pause();
-				exploded = true;
-			} else {
-				togglecantoggle();
-				setTimeout(togglecantoggle, 1050);
-				video2.currentTime = '1' - video1.currentTime;
-				setTimeout(toggleimg1, 1000);
-				toggleimg2();
-				video2.style.opacity = '1';
-				video1.style.opacity = '0';
-				video2.play();
-				video1.pause();
-				exploded = false;
-			}
-		}
-	}
+	// function togglevid() {
+	// 	if (cantoggle === true) {
+	// 		if (exploded === false) {
+	// 			togglecantoggle();
+	// 			setTimeout(togglecantoggle, 1050);
+	// 			video1.currentTime = '1' - video2.currentTime;
+	// 			setTimeout(toggleimg2, 1000);
+	// 			toggleimg1();
+	// 			video1.style.opacity = '1';
+	// 			video2.style.opacity = '0';
+	// 			video1.play();
+	// 			video2.pause();
+	// 			exploded = true;
+	// 		} else {
+	// 			togglecantoggle();
+	// 			setTimeout(togglecantoggle, 1050);
+	// 			video2.currentTime = '1' - video1.currentTime;
+	// 			setTimeout(toggleimg1, 1000);
+	// 			toggleimg2();
+	// 			video2.style.opacity = '1';
+	// 			video1.style.opacity = '0';
+	// 			video2.play();
+	// 			video1.pause();
+	// 			exploded = false;
+	// 		}
+	// 	}
+	// }
 
 	onMount(() => {
 		const target1 = document.getElementById('target1'),
@@ -97,13 +98,14 @@
 		}, { passive: true });
 
 		setpos();
-		video2.currentTime = '1'; //this is to make page loading more seamless
-		img1.style.opacity = '1';
-		img2.style.opacity = '0';
+		//video2.currentTime = '1'; //this is to make page loading more seamless
+		// img1.style.opacity = '1';
+		// img2.style.opacity = '0';
 		setTimeout(setpos, 500);
 		setTimeout(checkpos, 500);
 	});
 </script>
+<!--TODO: make the animation through canvas and changing frames as images; also make it a separate module like waves-->
 
 <main id="main">
 	<div class="subheader">
@@ -146,24 +148,25 @@
 				style="height: calc(100vh - 56px) !important; margin: 0;"
 			>
 				<div class="col-6 firstcol">
-					<div class="video-wrapper" on:click={togglevid} on:keypress={ togglevid }>
-						<video id="videoelement1" src="/assembly.webm" style="z-index: 1" bind:this={ video2 }></video>
-						<video id="videoelement2" src="/explosion.webm" style="z-index: 0" bind:this={ video1 }></video>
-						<img
-							bind:this={img1}
-							style="bind:opacity={opacity1}"
-							class="img"
-							src="/poster.png"
-							alt="VM35 assembled"
-						/>
-						<img
-							bind:this={img2}
-							style="bind:opacity={opacity2}"
-							class="img"
-							src="/poster2.png"
-							alt="VM35 exploded"
-						/>
-					</div>
+					<Explosion ismouseover={true} />
+<!--					<div class="video-wrapper" on:click={togglevid} on:keypress={ togglevid }>-->
+<!--						<video id="videoelement1" src="/assembly.webm" style="z-index: 1" bind:this={ video2 }></video>-->
+<!--						<video id="videoelement2" src="/explosion.webm" style="z-index: 0" bind:this={ video1 }></video>-->
+<!--						<img-->
+<!--							bind:this={img1}-->
+<!--							style="bind:opacity={opacity1}"-->
+<!--							class="img"-->
+<!--							src="/poster.png"-->
+<!--							alt="VM35 assembled"-->
+<!--						/>-->
+<!--						<img-->
+<!--							bind:this={img2}-->
+<!--							style="bind:opacity={opacity2}"-->
+<!--							class="img"-->
+<!--							src="/poster2.png"-->
+<!--							alt="VM35 exploded"-->
+<!--						/>-->
+<!--					</div>-->
 				</div>
 				<div class="col-6">
 					<h1>Meet the VM35.</h1>

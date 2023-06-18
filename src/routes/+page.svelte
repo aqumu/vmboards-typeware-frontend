@@ -43,9 +43,9 @@
 				</div>
 				<div class="col-7" style="padding-right: 5%; margin: auto;">
 					<img
-						src="/VIA.jpg"
+						src="/vmk_proto.png"
 						style="width: 100%; object-fit: cover; max-height: 100vh; border-radius: 0.55rem;"
-						alt="VIA screenshot"
+						alt="VMK screenshot"
 					/>
 				</div>
 			</div>
