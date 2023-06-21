@@ -2,69 +2,17 @@
 	import { onMount } from 'svelte';
 	import Explosion from '../../../lib/Explosion.svelte';
 
-	 let //video1,
-		//video2,
-		img1,
-		img2,
-		// opacity1,
-		// opacity2,
-		// exploded = false,
-		// cantoggle = true,
+	let
 		details,
 		groupbuy;
 
-	// function togglecantoggle() {
-	// 	cantoggle = !cantoggle;
-	// }
-	//
-	// function toggleimg1() {
-	// 	if (img1.style.opacity === '0') {
-	// 		img1.style.opacity = '1';
-	// 	} else {
-	// 		img1.style.opacity = '0';
-	// 	}
-	// }
-
-	// function toggleimg2() {
-	// 	if (img2.style.opacity === '0') {
-	// 		img2.style.opacity = '1';
-	// 	} else {
-	// 		img2.style.opacity = '0';
-	// 	}
-	// }
-
-	// function togglevid() {
-	// 	if (cantoggle === true) {
-	// 		if (exploded === false) {
-	// 			togglecantoggle();
-	// 			setTimeout(togglecantoggle, 1050);
-	// 			video1.currentTime = '1' - video2.currentTime;
-	// 			setTimeout(toggleimg2, 1000);
-	// 			toggleimg1();
-	// 			video1.style.opacity = '1';
-	// 			video2.style.opacity = '0';
-	// 			video1.play();
-	// 			video2.pause();
-	// 			exploded = true;
-	// 		} else {
-	// 			togglecantoggle();
-	// 			setTimeout(togglecantoggle, 1050);
-	// 			video2.currentTime = '1' - video1.currentTime;
-	// 			setTimeout(toggleimg1, 1000);
-	// 			toggleimg2();
-	// 			video2.style.opacity = '1';
-	// 			video1.style.opacity = '0';
-	// 			video2.play();
-	// 			video1.pause();
-	// 			exploded = false;
-	// 		}
-	// 	}
-	// }
-
 	onMount(() => {
-		const target1 = document.getElementById('target1'),
-					target2 = document.getElementById('target2'),
-					target3 = document.getElementById('target3');
+		
+		const 
+			target1 = document.getElementById('target1'),
+			target2 = document.getElementById('target2'),
+			target3 = document.getElementById('target3');
+			
 		let y = window.scrollY;
 
 		function checkpos() {
@@ -98,14 +46,11 @@
 		}, { passive: true });
 
 		setpos();
-		//video2.currentTime = '1'; //this is to make page loading more seamless
-		// img1.style.opacity = '1';
-		// img2.style.opacity = '0';
 		setTimeout(setpos, 500);
 		setTimeout(checkpos, 500);
+		
 	});
 </script>
-<!--TODO: make the animation through canvas and changing frames as images; also make it a separate module like waves-->
 
 <main id="main">
 	<div class="subheader">
@@ -144,30 +89,12 @@
 	<div class="section" style="position: relative; top: -40px; margin-bottom: -40px;">
 		<div class="container">
 			<div
-				class="row screenheight align-items-center"
+				class="row align-items-center"
 				style="height: calc(100vh - 56px) !important; margin: 0;"
 			>
 				<div class="col-6 firstcol">
-					<Explosion ismouseover={true} />
-<!--					<div class="video-wrapper" on:click={togglevid} on:keypress={ togglevid }>-->
-<!--						<video id="videoelement1" src="/assembly.webm" style="z-index: 1" bind:this={ video2 }></video>-->
-<!--						<video id="videoelement2" src="/explosion.webm" style="z-index: 0" bind:this={ video1 }></video>-->
-<!--						<img-->
-<!--							bind:this={img1}-->
-<!--							style="bind:opacity={opacity1}"-->
-<!--							class="img"-->
-<!--							src="/poster.png"-->
-<!--							alt="VM35 assembled"-->
-<!--						/>-->
-<!--						<img-->
-<!--							bind:this={img2}-->
-<!--							style="bind:opacity={opacity2}"-->
-<!--							class="img"-->
-<!--							src="/poster2.png"-->
-<!--							alt="VM35 exploded"-->
-<!--						/>-->
-<!--					</div>-->
-				</div>
+					<Explosion/>
+				</div>	
 				<div class="col-6">
 					<h1>Meet the VM35.</h1>
 				</div>
@@ -178,7 +105,7 @@
 		<div class="container">
 			<div class="row screenheight" style="margin: 0;">
 				<div class="col-6 justify-content-center d-flex" style="margin: auto 0; padding-left: 0;">
-					<img class="image" src="/vm1.png" alt="VM35 render" />
+					<img class="image" src="/vm1.png" alt="VM35 render"/>
 				</div>
 				<div class="col-6 align-content-center" style="margin: auto 0; padding-right: 0;">
 					<h2 class="overview-text">
@@ -203,7 +130,7 @@
 					</h4>
 				</div>
 				<div class="col-6 justify-content-center d-flex" style="margin: auto 0; padding-right: 0;">
-					<img class="image" src="/vm2.png" alt="another VM35 render" />
+					<img class="image" src="/vm2.png" alt="another VM35 render"/>
 				</div>
 			</div>
 		</div>
@@ -212,7 +139,7 @@
 		<div class="container">
 			<div class="row screenheight" style="margin: 0;">
 				<div class="col-6 justify-content-center d-flex" style="margin: auto 0; padding-left: 0;">
-					<img class="image" src="/vm3.png" alt="also VM35 render" />
+					<img class="image" src="/vm3.png" alt="also VM35 render"/>
 				</div>
 				<div class="col-6 align-content-center" style="margin: auto 0; padding-right: 0;">
 					<h2 class="overview-text">A remarkable combination of look, feel and sound.</h2>
@@ -237,7 +164,7 @@
 						<p class="label">Smoked Acrylic/<wbr />White PCB</p>
 						<p class="label" style="margin-right: 7%">Clear Acrylic/<wbr />White PCB</p>
 					</div>
-					<img src="/finishes.png" class="image" alt="available VM35 finishes" />
+					<img src="/finishes.png" class="image" alt="available VM35 finishes"/>
 				</div>
 			</div>
 		</div>
@@ -279,10 +206,10 @@
 				</div>
 
 				<div class="col-4">
-					<img src="/dimensions_1.png" class="image" style="width: 85%;" alt="" />
+					<img src="/dimensions_1.png" class="image" style="width: 85%;" alt=""/>
 				</div>
 				<div class="col-4">
-					<img src="/dimensions_2.png" class="image" style="width: 85%;" alt="" />
+					<img src="/dimensions_2.png" class="image" style="width: 85%;" alt=""/>
 				</div>
 			</div>
 		</div>
@@ -585,31 +512,6 @@
 		height: calc(100vh - 56px);
 		display: flex;
 		justify-content: center;
-	}
-
-	.video-wrapper {
-		position: relative;
-		max-height: calc(100vh - 56px);
-		max-width: calc(calc(100vh - 56px) * 8 / 9);
-		width: 100%;
-		aspect-ratio: 8/9;
-		margin: auto 0;
-		z-index: 2;
-		align-content: center;
-		justify-content: center;
-		cursor: pointer;
-	}
-
-	#videoelement1,
-	#videoelement2,
-	.img {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		max-height: calc(100vh - 56px);
-		transition: opacity 50ms;
-		width: 100%;
 	}
 
 	.image {

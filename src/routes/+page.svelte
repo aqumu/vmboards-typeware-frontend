@@ -13,7 +13,7 @@
 				<div class="col-6" style="display: flex;">
 					<div class="align-self-center" style="width: 80%;">
 						<h1>VM35 Macropad</h1>
-						<h2 style="padding-top: 5%;">COMING IN 2022</h2>
+						<h2 style="padding-top: 5%;">COMING IN 2023</h2>
 						<h3 style="padding-top: 10%;">
 							Sign in and keep up to date on the most versatile and powerful macropad yet.
 						</h3>
