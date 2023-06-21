@@ -1,15 +1,64 @@
 <script>
-  import explosion from '../modules/explosion.js';
+  import { onMount } from 'svelte';
 
-  export let resize = true;
+  onMount(() => {
+    
+    let
+      canvas = document.getElementById('canv'),
+      ismouseover = false,
+      current = 0;
+    
+    const
+      delta = 16, // 16ms for 60fps
+      length = 60,
+      images = new Array(length),
+      context = canvas.getContext("2d");
+    
+    canvas.width = 960;
+    canvas.height = 1080;
+    
+    function SetIsoverTrue() {
+      ismouseover = true;
+    }
+    
+    function SetIsoverFalse() {
+      ismouseover = false;
+    }
+    
+    canvas.onmouseover = function() {
+      SetIsoverTrue();
+    }
+    
+    canvas.onmouseleave = function() {
+      SetIsoverFalse();
+    }
+    
+
+    for (let i = 1; i <= length; i++) {
+      const image = new Image();
+      image.src = "../" + i + ".png"
+      images[i-1] = image;
+    }
+    
+    function drawFrame(ctx, imgs, len) {
+      if (ismouseover && current < length - 1) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        current++
+      }
+      if (!ismouseover && current > 0) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        current--
+      }  
+      ctx.drawImage(imgs[current], 0, 0);
+    }
+    
+    setInterval(drawFrame, delta, context, images, length);
+    
+  });
 </script>
 
 <div class="parent">
-  {#if !resize}
-    <canvas class="canv" use:explosion></canvas>
-  {:else}
-    <canvas class="canv" use:explosion resize></canvas>
-  {/if}
+  <canvas id="canv" resize></canvas>
 </div>
 
 <style>
@@ -24,22 +73,13 @@
       justify-content: center;
   }
 
-  .canv {
+  #canv {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       max-height: calc(100vh - 56px);
       height: 100%;
-      width: 100%;
-      z-index: 1000;
-  }
-  .canv[resize] {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-height: calc(100vh - 56px);
       width: 100%;
   }
 </style>
