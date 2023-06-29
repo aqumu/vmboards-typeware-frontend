@@ -37,15 +37,16 @@
 <header>
 	<nav class="navbar navbar-expand-sm">
 		<div class="container-fluid">
-			<a href="/"
-				><img
+			<a href="/" class="brand">
+				<img
 					id="brand"
 					height="20px"
 					src="/brand-logo.png"
 					alt="logo"
 					on:mouseover={ hidemenu }
-				/></a
-			>
+				/>
+				<span id="brandname">VMboards typeware</span>
+			</a>
 			<button
 				class="navbar-toggler-custom"
 				type="button"
@@ -116,6 +117,16 @@
 	#brand {
 		margin-top: 10px;
 		margin-bottom: 10px;
+	}
+	
+	.brand {
+		font-family: Raleway, sans-serif;
+		color: black;
+		text-decoration: none !important;
+	}
+	
+	#brandname {
+		 style="position: relative; top: 2px"
 	}
 
 	.navbar {
