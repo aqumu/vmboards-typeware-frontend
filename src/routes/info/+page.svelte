@@ -48,7 +48,7 @@
 	}
 	main {
 		box-shadow: -6vw 0 12vw 0 white inset;
-		background-image: url('/blueprint.png');
+		background-image: url('/blueprint.webp');
 		background-size: auto calc(100vh - 150px);
 		background-position-x: 60vw;
 		background-repeat: no-repeat;

@@ -105,7 +105,7 @@
 		<div class="container">
 			<div class="row screenheight" style="margin: 0;">
 				<div class="col-6 justify-content-center d-flex" style="margin: auto 0; padding-left: 0;">
-					<img class="image" src="/vm1.png" alt="VM35 render"/>
+					<img class="image" src="/vm1.webp" alt="VM35 render"/>
 				</div>
 				<div class="col-6 align-content-center" style="margin: auto 0; padding-right: 0;">
 					<h2 class="overview-text">
@@ -130,7 +130,7 @@
 					</h4>
 				</div>
 				<div class="col-6 justify-content-center d-flex" style="margin: auto 0; padding-right: 0;">
-					<img class="image" src="/vm2.png" alt="another VM35 render"/>
+					<img class="image" src="/vm2.webp" alt="another VM35 render"/>
 				</div>
 			</div>
 		</div>
@@ -139,7 +139,7 @@
 		<div class="container">
 			<div class="row screenheight" style="margin: 0;">
 				<div class="col-6 justify-content-center d-flex" style="margin: auto 0; padding-left: 0;">
-					<img class="image" src="/vm3.png" alt="also VM35 render"/>
+					<img class="image" src="/vm3.webp" alt="also VM35 render"/>
 				</div>
 				<div class="col-6 align-content-center" style="margin: auto 0; padding-right: 0;">
 					<h2 class="overview-text">A remarkable combination of look, feel and sound.</h2>
@@ -164,7 +164,7 @@
 						<p class="label">Smoked Acrylic/<wbr />White PCB</p>
 						<p class="label" style="margin-right: 7%">Clear Acrylic/<wbr />White PCB</p>
 					</div>
-					<img src="/finishes.png" class="image" alt="available VM35 finishes"/>
+					<img src="/finishes.webp" class="image" alt="available VM35 finishes"/>
 				</div>
 			</div>
 		</div>
@@ -206,10 +206,10 @@
 				</div>
 
 				<div class="col-4">
-					<img src="/dimensions_1.png" class="image" style="width: 85%;" alt=""/>
+					<img src="/dimensions_1.webp" class="image" style="width: 85%;" alt=""/>
 				</div>
 				<div class="col-4">
-					<img src="/dimensions_2.png" class="image" style="width: 85%;" alt=""/>
+					<img src="/dimensions_2.webp" class="image" style="width: 85%;" alt=""/>
 				</div>
 			</div>
 		</div>
@@ -278,13 +278,13 @@
 					>
 						<div class="carousel-inner" style="border-radius: 0.55rem 0.55rem 0.3rem 0.3rem;">
 							<div class="carousel-item active">
-								<img src="/vm1.png" class="d-block w-100" alt="..." />
+								<img src="/vm1.webp" class="d-block w-100" alt="..." />
 							</div>
 							<div class="carousel-item">
-								<img src="/vm2.png" class="d-block w-100" alt="..." />
+								<img src="/vm2.webp" class="d-block w-100" alt="..." />
 							</div>
 							<div class="carousel-item">
-								<img src="/vm3.png" class="d-block w-100" alt="..." />
+								<img src="/vm3.webp" class="d-block w-100" alt="..." />
 							</div>
 						</div>
 
@@ -311,7 +311,7 @@
 							<button
 								type="button"
 								class="thumbo active"
-								style="background-image: url(/vm1.png); margin-left: 0; border-bottom-left-radius: 0.55rem"
+								style="background-image: url(/vm1.webp); margin-left: 0; border-bottom-left-radius: 0.55rem"
 								data-bs-target="#carouselExampleIndicators"
 								data-bs-slide-to="0"
 								aria-current="true"
@@ -320,7 +320,7 @@
 							<button
 								type="button"
 								class="thumbo"
-								style="background-image: url(/vm2.png);"
+								style="background-image: url(/vm2.webp);"
 								data-bs-target="#carouselExampleIndicators"
 								data-bs-slide-to="1"
 								aria-label="Slide 2"
@@ -328,7 +328,7 @@
 							<button
 								type="button"
 								class="thumbo"
-								style="background-image: url(/vm3.png); margin-right: 0; border-bottom-right-radius: 0.55rem"
+								style="background-image: url(/vm3.webp); margin-right: 0; border-bottom-right-radius: 0.55rem"
 								data-bs-target="#carouselExampleIndicators"
 								data-bs-slide-to="2"
 								aria-label="Slide 3"

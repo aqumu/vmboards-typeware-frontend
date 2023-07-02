@@ -14,8 +14,8 @@
       images = new Array(length),
       context = canvas.getContext("2d");
     
-    canvas.width = 960;
-    canvas.height = 1080;
+    canvas.width = 560;
+    canvas.height = 820;
     
     function SetIsoverTrue() {
       ismouseover = true;
@@ -36,11 +36,11 @@
 
     for (let i = 1; i <= length; i++) {
       const image = new Image();
-      image.src = "../" + i + ".png"
+      image.src = "../" + i + ".webp"
       images[i-1] = image;
     }
     
-    function drawFrame(ctx, imgs, len) {
+    function drawFrame(ctx, imgs) {
       if (ismouseover && current < length - 1) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         current++
@@ -52,7 +52,7 @@
       ctx.drawImage(imgs[current], 0, 0);
     }
     
-    setInterval(drawFrame, delta, context, images, length);
+    setInterval(drawFrame, delta, context, images);
     
   });
 </script>

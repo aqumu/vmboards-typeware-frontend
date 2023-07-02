@@ -1,14 +1,7 @@
 <script>
-	import { onMount } from 'svelte';
 	import waves from '../modules/waves.js';
 	export let resize = true;
 	let y;
-	
-	onMount(() => {
-	  if (!!window.chrome && !!window.chrome.webstore) {
-		document.getElementsByClass("bend").style.width = "calc(100vw - 15px)";
-	  }
-	});
 </script>
 
 <svelte:window bind:scrollY={y} />
@@ -37,7 +30,7 @@
 	.background {
 		background: linear-gradient(3deg, #ffffff, #86a3c0);
 		height: calc(100vh - 56px);
-		width: 100vw;
+		width: 100%;
 	}
 
 	.bend {
@@ -46,17 +39,7 @@
 
 	/* Scale canvas with resize attribute to full size */
 	canvas[resize], canvas {
-		width: 100vw;
+		width: 100%;
 		height: calc(100vh - 56px);
-	}
-
-	/* fix canvas width for firefox*/
-	@supports (-moz-appearance: none) {
-		canvas {
-			width: 100%;
-		}
-		canvas[resize] {
-			width: 100%;
-		}
 	}
 </style>
