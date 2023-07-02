@@ -1,6 +1,6 @@
 <div class="container" style="margin-bottom: 10vh">
 	<img
-		src="/update2.png"
+		src="/update2.webp"
 		alt="Renders of VM35"
 		style="width: 100%; border-radius: 0.55rem; margin-bottom: 3px;"
 	/>
